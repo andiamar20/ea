@@ -1,273 +1,133 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amargoldenpips Elite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amargoldenpips | Exclusive Access</title>
+    <!-- Font Premium: Inter -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050a18;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --gold: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            --blue-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --green-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at top right, #1e293b, transparent);
+            color: white;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-<style>
-:root {
-    --primary: #2563eb;
-    --dark: #0f172a;
-    --soft: #64748b;
-}
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: linear-gradient(135deg, #f8fafc, #eef2ff);
-    color: var(--dark);
-}
+        .logo-area h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+            background: var(--gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.container {
-    max-width: 420px;
-    margin: auto;
-    padding: 30px 20px;
-}
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 35px;
+        }
 
-/* HEADER */
-.brand {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.brand h2 {
-    margin: 0;
-    font-weight: 800;
-}
-.brand span {
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: var(--soft);
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
 
-/* HERO */
-h1 {
-    font-size: 26px;
-    text-align: center;
-}
-.subtitle {
-    text-align: center;
-    color: var(--soft);
-    margin-bottom: 20px;
-}
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+        }
 
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(12px);
-    border-radius: 22px;
-    padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+        .btn-valetax { background: var(--blue-gradient); }
+        .btn-vantage { background: #111827; border: 1px solid #374151; }
+        .btn-telegram { background: var(--green-gradient); }
 
-/* BUTTON */
-.btn {
-    display: block;
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 15px;
-}
-.btn-dark {
-    background: var(--dark);
-    color: white;
-}
-.btn-primary {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-}
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* LIST */
-ul {
-    padding-left: 18px;
-}
-
-/* BADGE */
-.badge {
-    background: gold;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-/* SMALL */
-.small {
-    font-size: 12px;
-    color: var(--soft);
-}
-
-/* URGENCY */
-.urgency {
-    color: red;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* NOTIF */
-.notif {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: white;
-    padding: 10px 14px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    font-size: 13px;
-    display: none;
-}
-</style>
+        /* Dekorasi Lingkaran Cahaya */
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #3b82f6;
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+            top: 10%;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="glow"></div>
 
-    <!-- BRAND -->
-    <div class="brand">
-        <h2>Amargoldenpips</h2>
-        <span>TRADER INSIGHT</span>
-    </div>
+    <div class="container">
+        <div class="logo-area">
+            <h1>AMARGOLDENPIPS</h1>
+            <p class="subtitle">Elevate your trading journey</p>
+        </div>
 
-    <!-- HERO -->
-    <h1>🚀 Berhenti Loss & Mulai Trading dengan Sistem yang Benar</h1>
-    <div class="subtitle">
-        Gratis atau dibimbing sampai mahir — pilihan ada di kamu
-    </div>
-
-    <!-- EMOSI -->
-    <div class="card">
-        <p><strong>Sudah berapa lama kamu trading tapi masih belum konsisten?</strong></p>
-        <p>Kebanyakan trader gagal karena tidak punya sistem yang jelas.</p>
-    </div>
-
-    <!-- FREE -->
-    <div class="card">
-        <h3>🚀 Grup Diskusi Gratis</h3>
-        <ul>
-            <li>Diskusi trading aktif</li>
-            <li>Update market</li>
-            <li>Komunitas berkembang</li>
-        </ul>
-
-        <a href="https://t.me/Amargoldenpips" class="btn btn-dark" target="_blank" rel="noopener noreferrer">
-            Join Grup Gratis
+        <a href="https://ma.valetax-indonesia.com/p/7158891" class="btn btn-valetax">
+            📈 Daftar Valetax Indonesia
         </a>
 
-        <div class="small">100+ trader aktif</div>
-    </div>
-
-    <!-- VIP -->
-    <div class="card">
-        <h3>💎 VIP Signal (Gratis)</h3>
-        <ul>
-            <li>Signal harian</li>
-            <li>Analisa jelas</li>
-            <li>Edukasi dasar</li>
-        </ul>
-
-        <a href="https://www.vantagemarketsea.com/id/open-live-account/?affid=NzI2NjQwNw==&invitecode=YPucn3y"
-           class="btn btn-dark" target="_blank" rel="noopener noreferrer">
-           Mulai Gratis
+        <a href="https://www.vantagemarketsea.com/id/open-live-account/?affid=NzI2NjQwNw==&invitecode=YPucn3y3" class="btn btn-vantage">
+            📊 Daftar Vantage Markets
         </a>
-    </div>
 
-    <!-- MENTORING -->
-    <div class="card">
-        <div class="badge">🔥 MOST POPULAR</div>
-        <h3>👑 Private Mentoring</h3>
-        <p><strong>Rp 5.000.000</strong></p>
-
-        <div class="small">Lebih murah daripada loss berulang</div>
-
-        <ul>
-            <li>Dibimbing dari nol sampai mahir</li>
-            <li>Strategi terbukti</li>
-            <li>Risk management</li>
-            <li>Evaluasi langsung</li>
-        </ul>
-
-        <div class="urgency">⚠️ Slot terbatas</div>
-
-        <a href="https://t.me/Amargoldenpips"
-           class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-           Join Mentoring
+        <a href="https://t.me/Amartradergoldd" class="btn btn-telegram">
+            📲 Chat Admin Telegram
         </a>
+
+        <div class="footer-text">Secure & Professional Access</div>
     </div>
-
-    <!-- TRANSFORMASI -->
-    <div class="card">
-        <h3>📈 Transformasi</h3>
-
-        <p>❌ Sebelum:</p>
-        <ul>
-            <li>Sering loss</li>
-            <li>Bingung entry</li>
-        </ul>
-
-        <p>✅ Setelah:</p>
-        <ul>
-            <li>Punya sistem</li>
-            <li>Lebih percaya diri</li>
-            <li>Konsisten berkembang</li>
-        </ul>
-    </div>
-
-    <!-- TESTIMONI -->
-    <div class="card">
-        <h3>📊 Testimoni Member</h3>
-        <p>"Sekarang lebih paham market"</p>
-        <p>"Sudah mulai konsisten profit"</p>
-        <p>"Belajarnya jelas dan terarah"</p>
-    </div>
-
-    <!-- CTA -->
-    <div class="card" style="text-align:center;">
-        <h3>🚀 Saatnya Upgrade</h3>
-        <p>Semakin cepat kamu mulai, semakin cepat kamu berkembang</p>
-
-        <a href="https://t.me/Amargoldenpips"
-           class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-           Saya Siap Upgrade
-        </a>
-    </div>
-
-</div>
-
-<!-- POPUP -->
-<div id="notif" class="notif"></div>
-
-<script>
-const names = ["Andi","Budi","Rizky","Dimas","Fajar","Agus","Hendra","Iqbal","Rian","Yoga"];
-const actions = ["join grup gratis","masuk VIP","join mentoring","upgrade ke VIP"];
-const times = ["baru saja","1 menit lalu","5 menit lalu"];
-
-setInterval(() => {
-    let name = names[Math.floor(Math.random()*names.length)];
-    let action = actions[Math.floor(Math.random()*actions.length)];
-    let time = times[Math.floor(Math.random()*times.length)];
-
-    let notif = document.getElementById("notif");
-    notif.innerHTML = "🔥 " + name + " " + action + "<br><small>" + time + "</small>";
-    notif.style.display = "block";
-
-    setTimeout(() => notif.style.display = "none", 3000);
-}, 5000);
-</script>
-
-<!-- 🔥 FIX TIKTOK -->
-<script>
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        window.open(this.href, "_blank");
-    });
-});
-</script>
 
 </body>
 </html>
